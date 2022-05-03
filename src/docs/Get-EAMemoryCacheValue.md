@@ -1,4 +1,4 @@
----
+﻿---
 external help file: EAMemoryCache.dll-Help.xml
 Module Name: EAMemoryCache
 online version:
@@ -24,15 +24,17 @@ Uses the .Net Core IMemoryCache provider to bring caching to PowerShell
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-EAMemoryCacheValue -Key 'MyKey' -ActiveFor (  New-TimeSpan -Minutes 2 ) -Action {
+    Get-MyValueFromSQL
+}
 ```
 
-{{ Add example description here }}
+On first call, this will run the Action command and store the results. If the key MyKey is asked for again before 2 minutes is up, it will return the cached data instead of doing another hit to SQL. If it's after 2 minutes, it will refresh the data before sending it back.
 
 ## PARAMETERS
 
 ### -Action
-{{ Fill Action Description }}
+ScriptBlock action that will return the results we want cached.
 
 ```yaml
 Type: ScriptBlock
@@ -47,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveFor
-{{ Fill ActiveFor Description }}
+TimeSpan to say how long the cache should be active for
 
 ```yaml
 Type: TimeSpan
@@ -62,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Arguments
-{{ Fill Arguments Description }}
+Array of arguments to send to the script block if required
 
 ```yaml
 Type: Object[]
@@ -77,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Key
-{{ Fill Key Description }}
+The unique key to use in the cache.
 
 ```yaml
 Type: String
@@ -97,11 +99,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
-
 ## OUTPUTS
 
 ### System.Object
-
 ## NOTES
 
 ## RELATED LINKS

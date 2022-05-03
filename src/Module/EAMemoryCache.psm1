@@ -8,4 +8,4 @@ else{
 
 [EAMemoryCache.CacheInteraction]::Initialize()
 
-Export-ModuleMember -Cmdlet 'Get-EAMemoryCacheValue'
+Export-ModuleMember -Cmdlet 'Get-EAMemoryCacheValue','Remove-EAMemoryCacheValue'
