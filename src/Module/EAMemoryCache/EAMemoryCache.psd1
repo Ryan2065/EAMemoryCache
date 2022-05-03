@@ -12,7 +12,7 @@
  RootModule = 'EAMemoryCache.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.1'
+ModuleVersion = '0.1.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -30,7 +30,7 @@ CompanyName = 'Ephing Admin'
 Copyright = '(c) Ryan Ephgrave. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'Provides a PowerShell interface to the .Net Core implementation of IMemoryCache'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
@@ -98,10 +98,10 @@ PrivateData = @{
         # Tags = @()
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/Ryan2065/EAMemoryCache/blob/main/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/Ryan2065/EAMemoryCache'
 
         # A URL to an icon representing this module.
         # IconUri = ''
